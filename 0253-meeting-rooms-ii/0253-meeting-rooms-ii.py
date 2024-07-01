@@ -6,8 +6,9 @@ class Solution:
         
         meeting_ends = []
         
-        intervals.sort(key = lambda x: x[0])
-        
+        #intervals.sort(key = lambda x: x[0])
+        intervals.sort()
+
         heapq.heappush(meeting_ends, intervals[0][1]) # end time of first meeting
         
         for i in intervals[1:]:
