@@ -11,5 +11,5 @@ class Solution:
                 return False
         return True
     
-    # Time: O(n), Space: O(n)
+    # Time: O(n*log(n)), Space: O(n)
         
