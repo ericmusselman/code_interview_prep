@@ -1,11 +1,6 @@
-class Solution(object):
-    def romanToInt(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        
-        roman_values = {
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        my_map = {
             "I": 1,
             "V": 5,
             "X": 10,
@@ -15,16 +10,15 @@ class Solution(object):
             "M": 1000
         }
         
-        output = 0
-        i = 0
-        length = len(s)
-        
-        while i < length:
-            if i + 1 < length and roman_values[s[i + 1]] > roman_values[s[i]]:
-                output += roman_values[s[i + 1]] - roman_values[s[i]]
-                i+=2
+        answer, i = 0, 0
+        while i < len(s):
+            if i+1 < len(s) and my_map[s[i]] < my_map[s[i+1]]:
+                answer += my_map[s[i + 1]] - my_map[s[i]]
+                i += 2
             else:
-                output += roman_values[s[i]]
-                i+=1
-        return output
-            
+                answer += my_map[s[i]]
+                i += 1
+        return answer
+        
+        # Time: O(1), Space: O(1)
+        
